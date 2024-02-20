@@ -1,0 +1,94 @@
+///*/////////////////////////////*///
+/// IN THE NAME OF ALMIGHTY ALLAH ///
+///*/////////////////////////////*///
+
+///*///////////////*///
+/// Author : Um_ded ///
+///*///////////////*///
+
+///*//////////////////////////////////////////*///
+/// "When you want something, all the universe ///
+///  conspires in helping you to achieve it."  ///
+///              - Paulo Coelho, The Alchemist ///
+///*//////////////////////////////////////////*///
+
+#include <bits/stdc++.h>
+
+#define SS           " "
+#define endl         "\n"
+#define EPS          1e-9
+#define gcd          __gcd
+#define FT           first
+#define SD           second
+#define pb           push_back
+#define MP           make_pair
+#define pi           acos(-1.0)
+#define Ars          greater<int>()
+#define vi           vector<int>
+#define vb           vector<bool>
+#define pii          pair<int,int>
+#define vll          vector<long long>
+#define pll          pair<long long, long long>
+#define vvi          vector<vector<int> >
+#define vvll         vector<vector<long long> >
+#define mod          (long long)1000000007
+#define flush        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+#define noice        ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+using namespace std;
+
+typedef long long              ll;
+typedef double                 dbl;
+typedef unsigned long long     ull;
+
+void bin_srch(dbl n)
+{
+    dbl l=n-2, r=n, m;
+
+    while(r-l>=EPS)
+    {
+        m = (l+r)/2.0;
+        dbl cur = m*(n-m)*1.0;
+
+        if(abs(n-cur)<=EPS)
+            break;
+        else if(cur>n)
+            l = m-EPS;
+        else
+            r = m+EPS;
+    }
+
+    cout<<"Y"<<SS<<fixed<<setprecision(9)<<m<<SS<<(n-m)<<endl;
+}
+
+void solve()
+{
+    dbl n;
+    cin>>n;
+
+    if(n==0)
+        cout<<"Y 0.000000000 0.000000000\n";
+    else if(n<4)
+        cout<<"N"<<endl;
+    else
+        bin_srch(n);
+}
+
+int main()
+{
+    noice
+
+    int t=1;
+    cin>>t;
+
+    while(t--)
+        solve();
+
+    return 0;
+}
+
+///*////////////////////////////////////////////*///
+/// "There is only one thing that makes a dream  ///
+/// impossible to achieve: the fear of failure." ///
+///                - Paulo Coelho, The Alchemist ///
+///*////////////////////////////////////////////*///
