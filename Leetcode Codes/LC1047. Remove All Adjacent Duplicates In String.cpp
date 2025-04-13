@@ -1,17 +1,14 @@
-class Solution///we can also use stack for this problem
-{
+// we can also use stack for this problem
+class Solution {
     public:
-        string removeDuplicates(string S)
-        {
+        string removeDuplicates(string S) {
             string v;
             v.push_back(S[0]);
 
-            for(int i=1; i<S.size(); i++)
-            {
+            for(int i=1; i<S.size(); i++) {
                 if(v.empty())
                     v.push_back(S[i]);
-                else
-                {
+                else {
                     if(S[i] == v.back())
                         v.pop_back();
                     else

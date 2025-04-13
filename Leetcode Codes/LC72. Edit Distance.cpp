@@ -1,10 +1,7 @@
 ///Approach 1
-
-class Solution
-{
+class Solution {
     public:
-        int minDistance(string word1, string word2)
-        {
+        int minDistance(string word1, string word2) {
             int dp[word1.size()+2][word2.size()+2];
             int sza = word1.size();
             int szb = word2.size();
@@ -15,10 +12,8 @@ class Solution
             for(int i=0; i<=szb; i++)
                 dp[sza][i] = szb-i;
 
-            for(int i=sza-1; i>=0; i--)
-            {
-                for(int j=szb-1; j>=0; j--)
-                {
+            for(int i=sza-1; i>=0; i--) {
+                for(int j=szb-1; j>=0; j--) {
                     if(word1[i] == word2[j])
                         dp[i][j] = dp[i+1][j+1];
                     else
@@ -30,15 +25,10 @@ class Solution
         }
 };
 
-
-
 ///Approach 2
-
-class Solution
-{
+class Solution {
     public:
-        int minDistance(string word1, string word2)
-        {
+        int minDistance(string word1, string word2) {
             int dp[word1.size()+2][word2.size()+2];
             int sza = word1.size();
             int szb = word2.size();
@@ -49,10 +39,8 @@ class Solution
             for(int i=0; i<=szb; i++)
                 dp[0][i] = i;
 
-            for(int i=1; i<=sza; i++)
-            {
-                for(int j=1; j<=szb; j++)
-                {
+            for(int i=1; i<=sza; i++) {
+                for(int j=1; j<=szb; j++) {
                     if(word1[i-1] == word2[j-1])
                         dp[i][j] = dp[i-1][j-1];
                     else

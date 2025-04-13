@@ -108,7 +108,7 @@ void solve()
         ways = (ways*cnt)%mod;
     }
 
-    cout<<ans<<SS<<ways;
+    cout<<ans<<SS<<ways<<endl;
 }
 
 int main()

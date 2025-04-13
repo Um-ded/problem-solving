@@ -1,14 +1,11 @@
-class Solution
-{
+class Solution {
     public:
-        int lengthOfLIS(vector<int>& nums)
-        {
+        int lengthOfLIS(vector<int>& nums) {
             int sz = nums.size();
             vector<int> dp(sz, 1);
             int ans = 0;
 
-            for(int i=sz-1; i>=0; i--)
-            {
+            for(int i=sz-1; i>=0; i--) {
                 int cur = 0;
 
                 for(int j=i+1; j<sz; j++)

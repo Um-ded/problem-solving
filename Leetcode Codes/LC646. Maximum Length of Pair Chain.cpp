@@ -1,13 +1,10 @@
-class Solution
-{
+class Solution {
     public:
-        int findLongestChain(vector<vector<int>>& pairs)
-        {
+        int findLongestChain(vector<vector<int>>& pairs) {
             int sz = pairs.size();
             vector<pair<int, int> > vp(sz);
 
-            for(int i=0; i<sz; i++)
-            {
+            for(int i=0; i<sz; i++) {
                 vp[i].first = pairs[i][0];
                 vp[i].second = pairs[i][1];
             }
@@ -16,8 +13,7 @@ class Solution
             int ans = 0;
             vector<int> dp(sz, 1);
 
-            for(int i=sz-1; i>=0; i--)
-            {
+            for(int i=sz-1; i>=0; i--) {
                 int cur = 0;
 
                 for(int j=i+1; j<sz; j++)

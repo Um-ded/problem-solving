@@ -1,8 +1,6 @@
-class Solution
-{
+class Solution {
     public:
-        int longestCommonSubsequence(string text1, string text2)
-        {
+        int longestCommonSubsequence(string text1, string text2) {
             int sza = text1.size();
             int szb = text2.size();
             vector<int> v;
@@ -10,10 +8,8 @@ class Solution
             v.assign(szb+2, 0);
             dp.assign(sza+2, v);
 
-            for(int i=sza-1; i>=0; i--)
-            {
-                for(int j=szb-1; j>=0; j--)
-                {
+            for(int i=sza-1; i>=0; i--) {
+                for(int j=szb-1; j>=0; j--) {
                     if(text1[i]==text2[j])
                         dp[i][j] = dp[i+1][j+1]+1;
                     else

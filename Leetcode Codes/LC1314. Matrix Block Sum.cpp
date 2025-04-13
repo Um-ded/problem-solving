@@ -1,8 +1,6 @@
-class Solution
-{
+class Solution {
     public:
-        vector<vector<int>> matrixBlockSum(vector<vector<int>>& mat, int K)
-        {
+        vector<vector<int>> matrixBlockSum(vector<vector<int>>& mat, int K) {
             int m, n;
             m = mat.size();
             n = mat[0].size();
@@ -18,10 +16,8 @@ class Solution
                 for(int j=1; j<n; j++)
                     mat[i][j] = mat[i][j-1]+mat[i-1][j]+mat[i][j]-mat[i-1][j-1];
 
-            for(int i=0; i<m; i++)
-            {
-                for(int j=0; j<n; j++)
-                {
+            for(int i=0; i<m; i++) {
+                for(int j=0; j<n; j++) {
                     bool row=1, col=1;
                     int x1, y1, x2, y2;
                     x1 = max(0, i-K-1);
